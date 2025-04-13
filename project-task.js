@@ -38,7 +38,11 @@ const todos = [
   2. Use an anonymous function as the callback.
   3. Return only the tasks that are not completed.
   */
-  
+ 
+  let incompTasks = todos.filter(function(todo){
+    return todo.completed === false;
+  });
+  console.log("Incomplete tasks:", incompTasks);
   
   /*
   🔹 Task 2: Sort Tasks by Priority
@@ -49,6 +53,11 @@ const todos = [
   3. Sort tasks in ascending order of priority (1 = highest).
   */
   
+  let priorList = todos.sort(function(a, b){
+    return a.priority - b.priority;
+
+  });
+  console.log("Sorted by Priority:", priorList);
   
   /*
   🔹 Task 3: Mark All Tasks as Completed
@@ -59,6 +68,11 @@ const todos = [
   3. Change the `completed` property to `true` for every task.
   */
   
+let compArr = todos.map(function(todo){ 
+  return todo.completed = true
+});
+console.log("All tasks Completed:", compArr);
+
   
   /*
   🔹 Task 4: Combine Filters
@@ -70,6 +84,16 @@ const todos = [
   */
   
   
+
+let filterPriority = todos.filter(function(todo){
+  return todo.completed === false;
+}).sort(function(a, b){
+  return a.priority - b.priority;
+});
+console.log("Sorted Incomplete Tasks", filterPriority);
+
+// let filteredAndSorted = todos.filter(todo => todo.completed = false).sort((a, b) => a.priority - b.priority);
+// console.log("Sorted Incomplete Tasks", filteredAndSorted)
   // ============================================
   // 🧪 Console Test Your Work
   // ============================================
